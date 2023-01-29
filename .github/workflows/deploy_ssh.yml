@@ -23,7 +23,8 @@ jobs:
             cd ~/final-project/testbed/FastAPI_test/
             # nohup uvicorn app_single:app --reload --host=0.0.0.0 --port=30001 &
             # nohup uvicorn app_single:app --reload --host=0.0.0.0 --port=30001 < /dev/null & > /dev/null &
-            sleep 4
+            nohup uvicorn app_single:app --reload --host=0.0.0.0 --port=30001 > nohup.out 2> nohup.err < /dev/null &
+            # sleep 4
             # echo -ne '\n'
             # cd ~/testbed/FastAPI_test
             # nohup uvicorn app_single:app --reload --host=0.0.0.0 --port=30001 &
