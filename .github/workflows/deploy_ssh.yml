@@ -21,6 +21,7 @@ jobs:
             # pipenv shell
             cd ~/final-project/testbed/FastAPI_test/
             pipenv run nohup uvicorn app_single:app --reload --host=0.0.0.0 --port=30001 &
+            echo -ne '\n'
             # cd ~/testbed/FastAPI_test
             # nohup uvicorn app_single:app --reload --host=0.0.0.0 --port=30001 &
             # sleep 5
