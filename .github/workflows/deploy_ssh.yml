@@ -20,7 +20,11 @@ jobs:
             cd ~/final-project
             source /opt/ml/.local/share/virtualenvs/final-project-1ugMOtgr/bin/activate
             cd ~/final-project/testbed/FastAPI_test/
-            kill -9 $(lsof -t -i:30001)
+            if [ -n "$(lsof -t -i:30001)" ]; then
+              echo "kill FastAPI"
+              kill -9 $(lsof -t -i:30001)
+            fi
+            # kill -9 $(lsof -t -i:30001)
             sleep 5
             nohup uvicorn app_single:app --reload --host=0.0.0.0 --port=30001 > nohup.out 2> nohup.err < /dev/null &
             # sleep 4
