@@ -17,10 +17,8 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         port: 2232
         script: |
+            kill -9 $(lsof -t -i:30001)
             cd ~
             mkdir kiki
-            cd final-project
-            git pull
-            mkdir hong
             # cd ${{ github.event.repository.name }}/part2/04-cicd
             # sh deploy_ssh.sh
