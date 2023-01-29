@@ -18,12 +18,12 @@ jobs:
         port: 2232
         script: |
             cd ~/final-project
-            pipenv shell
-            cd ~/testbed/FastAPI_test
-            nohup uvicorn app_single:app --reload --host=0.0.0.0 --port=30001 &
-            sleep 5
-            kill -9 $(lsof -t -i:30001)
-            cd ~
-            mkdir kiki
+            # pipenv shell
+            # cd ~/testbed/FastAPI_test
+            # nohup uvicorn app_single:app --reload --host=0.0.0.0 --port=30001 &
+            # sleep 5
+            # kill -9 $(lsof -t -i:30001)
+            # cd ~
+            # mkdir kiki
             # cd ${{ github.event.repository.name }}/part2/04-cicd
             # sh deploy_ssh.sh
