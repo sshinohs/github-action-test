@@ -19,5 +19,8 @@ jobs:
         script: |
             cd ~
             mkdir kiki
+            cd final-project
+            git pull
+            mkdir hong
             # cd ${{ github.event.repository.name }}/part2/04-cicd
             # sh deploy_ssh.sh
