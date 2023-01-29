@@ -17,6 +17,9 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         port: 2232
         script: |
+            cd ~/final-project
+            pipenv shell
+            cd ~/testbed/FastAPI_test
             nohup uvicorn app_single:app --reload --host=0.0.0.0 --port=30001 &
             sleep 5
             kill -9 $(lsof -t -i:30001)
